@@ -1,4 +1,4 @@
-# node-ping-proxy
+# node-ping-proxy [![npm version](https://badge.fury.io/js/ping-proxy.svg)](http://badge.fury.io/js/ping-proxy) ![](https://travis-ci.org/kyungw00k/node-ping-proxy.svg)
 > Simple Proxy Checker
 
 ## Examples
