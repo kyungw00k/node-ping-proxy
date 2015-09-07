@@ -1,0 +1,29 @@
+{
+  "name": "node-ping-proxy",
+  "version": "1.0.0",
+  "description": "check HTTP proxies, check socks 4 / 5 proxies, socks proxy checker",
+  "keywords": [
+    "proxy",
+    "ping",
+    "checker"
+  ],
+  "main": "ping-proxy.js",
+  "dependencies": {
+    "https-proxy-agent": "^1.0.0",
+    "socks": "^1.1.8",
+    "valid-url": "^1.0.9"
+  },
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha test/ping-proxy-test"
+  },
+  "homepage": "https://github.com/kyungw00k/node-ping-proxy",
+  "bugs": {
+    "url": "https://github.com/kyungw00k/node-ping-proxy"
+  },
+  "author": "Kyungwook Park",
+  "license": "MIT",
+  "devDependencies": {
+    "jshint": "^2.8.0",
+    "mocha": "^2.3.1"
+  }
+}
