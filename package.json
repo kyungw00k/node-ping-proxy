@@ -1,5 +1,5 @@
 {
-  "name": "node-ping-proxy",
+  "name": "ping-proxy",
   "version": "1.0.0",
   "description": "check HTTP proxies, check socks 4 / 5 proxies, socks proxy checker",
   "main": "ping-proxy.js",
