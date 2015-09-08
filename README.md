@@ -1,4 +1,4 @@
-# node-ping-proxy [![npm version](https://badge.fury.io/js/ping-proxy.svg)](http://badge.fury.io/js/ping-proxy) ![](https://travis-ci.org/kyungw00k/node-ping-proxy.svg)
+# node-ping-proxy [![npm version](https://badge.fury.io/js/ping-proxy.svg)](http://badge.fury.io/js/ping-proxy) ![](https://travis-ci.org/kyungw00k/node-ping-proxy.svg) [![Coverage Status](https://coveralls.io/repos/kyungw00k/node-ping-proxy/badge.svg?branch=master&service=github)](https://coveralls.io/github/kyungw00k/node-ping-proxy?branch=master)
 > Simple Proxy Checker
 
 ## Examples
