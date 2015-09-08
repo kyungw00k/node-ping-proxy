@@ -37,41 +37,41 @@ describe('pingProxyAsync()', function () {
         });
     });
 
-    it('this http proxy must be working', function (done) {
-        this.timeout(15000);
-        pingProxyAsync({
-            proxyHost: '54.187.52.159', // pick one from https://kingproxies.com/
-            proxyPort: 3128,
-            proxyTestUrl: "https://kingproxies.com/"
-        }, function (err, options, statusCode) {
-            assert(200, statusCode);
-            done();
-        });
-    });
-
-    it('this socks 4 proxy must be working', function (done) {
-        this.timeout(15000);
-        pingProxyAsync({
-            proxyHost: '83.239.108.238', // pick one from https://kingproxies.com/
-            proxyPort: 1080,
-            proxySocks: 4,
-            proxyTestUrl: "https://kingproxies.com/"
-        }, function (err, options, statusCode) {
-            assert(200, statusCode);
-            done();
-        });
-    });
-
-    it('this socks 5 proxy must be working', function (done) {
-        this.timeout(15000);
-        pingProxyAsync({
-            proxyHost: '103.246.244.174', // pick one from https://kingproxies.com/
-            proxyPort: 9378,
-            proxySocks: 5,
-            proxyTestUrl: "https://kingproxies.com/"
-        }, function (err, options, statusCode) {
-            assert(200, statusCode);
-            done();
-        });
-    });
+    //it('this http proxy must be working', function (done) {
+    //    this.timeout(15000);
+    //    pingProxyAsync({
+    //        proxyHost: '54.187.52.159', // pick one from https://kingproxies.com/
+    //        proxyPort: 3128,
+    //        proxyTestUrl: "https://kingproxies.com/"
+    //    }, function (err, options, statusCode) {
+    //        assert(200, statusCode);
+    //        done();
+    //    });
+    //});
+    //
+    //it('this socks 4 proxy must be working', function (done) {
+    //    this.timeout(15000);
+    //    pingProxyAsync({
+    //        proxyHost: '83.239.108.238', // pick one from https://kingproxies.com/
+    //        proxyPort: 1080,
+    //        proxySocks: 4,
+    //        proxyTestUrl: "https://kingproxies.com/"
+    //    }, function (err, options, statusCode) {
+    //        assert(200, statusCode);
+    //        done();
+    //    });
+    //});
+    //
+    //it('this socks 5 proxy must be working', function (done) {
+    //    this.timeout(15000);
+    //    pingProxyAsync({
+    //        proxyHost: '103.246.244.174', // pick one from https://kingproxies.com/
+    //        proxyPort: 9378,
+    //        proxySocks: 5,
+    //        proxyTestUrl: "https://kingproxies.com/"
+    //    }, function (err, options, statusCode) {
+    //        assert(200, statusCode);
+    //        done();
+    //    });
+    //});
 });

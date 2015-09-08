@@ -3,3 +3,7 @@
 .DS_Store
 node_modules/
 *-compiled*
+coverage/
+lib-cov/
+coverage.json
+.coveralls.yml
