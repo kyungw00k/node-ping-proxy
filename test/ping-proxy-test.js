@@ -4,7 +4,8 @@ var pingProxyAsync = require('../ping-proxy')
 describe('pingProxyAsync()', function () {
     it('"proxyHost" is required', function (done) {
         pingProxyAsync({
-            proxyPort: 8888
+            proxyPort: 8888,
+            secureProtocol: void 0
         }, function (err) {
             if (err) {
                 assert('Missing required params: proxyHost', err.message);
@@ -15,7 +16,8 @@ describe('pingProxyAsync()', function () {
 
     it('"proxyPort" is required', function (done) {
         pingProxyAsync({
-            proxyHost: '127.0.0.1'
+            proxyHost: '127.0.0.1',
+            secureProtocol: void 0
         }, function (err) {
             if (err) {
                 assert('Missing required params: proxyPort', err.message);
@@ -28,7 +30,8 @@ describe('pingProxyAsync()', function () {
         pingProxyAsync({
             proxyHost: '127.0.0.1',
             proxyPort: 8888,
-            proxySocks: '4a'
+            proxySocks: '4a',
+            secureProtocol: void 0
         }, function (err) {
             if (err) {
                 assert('"Invalid SOCKS Protocol. Use \'4\' or \'5\' instead."', err.message);

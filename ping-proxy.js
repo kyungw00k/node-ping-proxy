@@ -4,10 +4,18 @@ var Socks = require('socks')
     , HttpsProxyAgent = require('https-proxy-agent')
     , validUrl = require('valid-url');
 
-https.globalAgent.options.secureProtocol = 'SSLv3_method';
+var defaults = {
+  secureProtocol: 'SSLv3_method',
+};
 
-function pingProxyAsync(options, callback) {
+function pingProxyAsync(_options, callback) {
     'use strict';
+
+    var options = Object.assign({}, defaults, _options);
+
+    if (options.secureProtocol) {
+      https.globalAgent.options.secureProtocol = options.secureProtocol;
+    }
 
     var httpOptions = {hostname: 'www.google.com', port: '443'};
 
@@ -73,6 +81,10 @@ function pingProxyAsync(options, callback) {
         res.on("error", function (err) {
             callback(err, options, res.statusCode);
         });
+    })
+    .on("error", function (err) {
+        // catch errors like ECONNREFUSED
+        callback(err, options);
     });
 }
 
