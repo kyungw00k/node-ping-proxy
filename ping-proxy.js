@@ -4,10 +4,44 @@ var Socks = require('socks')
     , HttpsProxyAgent = require('https-proxy-agent')
     , validUrl = require('valid-url');
 
-https.globalAgent.options.secureProtocol = 'SSLv3_method';
-
-function pingProxyAsync(options, callback) {
+// Object.assign Polifill
+if (typeof Object.assign != 'function') {
+  Object.assign = function(target, varArgs) { // .length of function is 2
     'use strict';
+    if (target == null) { // TypeError if undefined or null
+      throw new TypeError('Cannot convert undefined or null to object');
+    }
+
+    var to = Object(target);
+
+    for (var index = 1; index < arguments.length; index++) {
+      var nextSource = arguments[index];
+
+      if (nextSource != null) { // Skip over if undefined or null
+        for (var nextKey in nextSource) {
+          // Avoid bugs when hasOwnProperty is shadowed
+          if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+            to[nextKey] = nextSource[nextKey];
+          }
+        }
+      }
+    }
+    return to;
+  };
+}
+
+var defaults = {
+  secureProtocol: 'SSLv3_method',
+};
+
+function pingProxyAsync(_options, callback) {
+    'use strict';
+
+    var options = Object.assign({}, defaults, _options);
+
+    if (options.secureProtocol) {
+      https.globalAgent.options.secureProtocol = options.secureProtocol;
+    }
 
     var httpOptions = {hostname: 'www.google.com', port: '443'};
 
@@ -73,6 +107,10 @@ function pingProxyAsync(options, callback) {
         res.on("error", function (err) {
             callback(err, options, res.statusCode);
         });
+    })
+    .on("error", function (err) {
+        // catch errors like ECONNREFUSED
+        callback(err, options);
     });
 }
 
