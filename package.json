@@ -1,8 +1,9 @@
 {
   "name": "ping-proxy",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "check HTTP proxies, check socks 4 / 5 proxies, socks proxy checker",
   "main": "ping-proxy.js",
+  "types": "index.d.ts",
   "author": "Kyungwook Park",
   "license": "MIT",
   "keywords": [
@@ -10,24 +11,23 @@
     "ping",
     "checker"
   ],
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
-    "https-proxy-agent": "^1.0.0",
-    "socks": "^1.1.8",
-    "valid-url": "^1.0.9"
+    "https-proxy-agent": "^7.0.6",
+    "socks-proxy-agent": "^8.0.5"
   },
   "devDependencies": {
-    "coveralls": "^2.11.4",
-    "istanbul": "^0.3.19",
-    "jshint": "^2.8.0",
-    "mocha": "^2.3.1",
-    "mocha-lcov-reporter": "0.0.2"
+    "c8": "^10.1.3",
+    "mocha": "^11.1.0"
   },
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "mocha",
-    "test-cov": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "test-cov": "c8 mocha"
   },
   "repository": {
     "type": "git",
