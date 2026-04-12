@@ -36,5 +36,9 @@
   "homepage": "https://github.com/kyungw00k/node-ping-proxy",
   "bugs": {
     "url": "https://github.com/kyungw00k/node-ping-proxy"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.5"
   }
 }
